@@ -36,7 +36,7 @@ const BookShow = (props) => {
   useEffect(() => {
     let dataShows = null;
 
-    fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
+    fetch(props.baseUrl + "/movies/" + props.match.params.id + "/shows", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -193,7 +193,7 @@ const BookShow = (props) => {
 
   return (
     <div>
-      <Header baseUrl={props.baseUrl} />
+      <Header  id={props.match.params.id}  />
       <div className="bookShow">
         <Typography className="back">
           <Link to={"/movie/" + props.match.params.id}>
@@ -203,7 +203,7 @@ const BookShow = (props) => {
 
         <Card className="cardStyle">
           <CardContent>
-            <Typography variant="headline" component="h2">
+            <Typography variant="h5" component="h2">
               BOOK SHOW
             </Typography>
             <br />
